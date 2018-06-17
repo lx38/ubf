@@ -24,10 +24,9 @@ reg [95:0] din;
 reg [31:0] agwk;
 reg [95:0] dout; 
 reg [31:0] hout;
-reg [31:0] e;
 
 
-efgh efgh0 (.clk, .din, .agwk, .dout, .hout, .eout(e));
+efgh efgh0 (.clk, .din, .agwk, .dout, .hout);
 
 initial begin
   #0 clk  = 1'b0;

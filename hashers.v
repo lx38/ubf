@@ -26,23 +26,24 @@ module efgh (
   input      [31:0] agwk, 
   input      [95:0] din,  
 
-  output reg [95:0] dout,
-  output reg [31:0] hout,
-  output reg [31:0] eout
+  output [95:0] dout,
+  output [31:0] hout
 );
 
 `include "funcs.vh"
 
-wire [31:0] e,f,g,calce; 
-assign {e,f,g} = din;
+reg [95:0] o;
+reg [31:0] x;
 
-assign calce = e1(e) + ch(e,f,g) + agwk;
+wire [31:0] e,f,g,calce; 
+assign {e,f,g} = o;
+assign calce = e1(e) + ch(e,f,g) + x;
+assign dout = {calce, e,f};
+assign hout = g;
 
 always @(posedge clk) begin: efgh_regs
-  dout <= {calce,e,f};
-  hout <= g;
-  eout <= calce;
-
+  o <= din;
+  x <= agwk;
 end
 
 
