@@ -39,7 +39,7 @@ initial begin
   @(posedge clk);
 
   agwk = 32'h1b1914cf;
-  din = 96'h9ebad54f_85b1c84a_72f4312b; // expects c7253cdb   
+  din = 96'h9ebad54f_85b1c84a_72f4312b; // expects caf190f9   
   @(posedge clk);
 
   agwk = 32'h87bb7a3d;
@@ -47,7 +47,7 @@ initial begin
   @(posedge clk);
 
   agwk = 32'h1b1914cf;
-  din = 96'h9ebad54f_85b1c84a_72f4312b; // expects c7253cdb   
+  din = 96'h9ebad54f_85b1c84a_72f4312b; // expects caf190f9   
   @(posedge clk);
 
   $finish;
